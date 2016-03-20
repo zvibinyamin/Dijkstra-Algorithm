@@ -126,15 +126,17 @@ public class DijkstraSP {
         return path;
     }
 
-    public static void addEdge(Vertex[][] v, int jndex_IN, int jndex_OUT, float cost) {
-        for (int i = 0; i < v.length; i++) {
-            v[i][jndex_IN].adjacencies.add(new Edge(v[i][jndex_OUT], cost));
-        }
+    public static void addEdge(Vertex[] v, int jndex_IN, int jndex_OUT, float cost) {
+        v[jndex_IN].adjacencies.add(new Edge(v[jndex_OUT], cost));
+//        for (int i = 0; i < v.length; i++) {
+//            v[i][jndex_IN].adjacencies.add(new Edge(v[i][jndex_OUT], cost));
+//        }
     }
 
-    public static Vertex[][] init1(String file_name1, int num_of_queries) {
-        
-        Vertex[][] v = null;
+    public static Vertex[] init1(String file_name1, int num_of_queries) {
+
+        Vertex[] v = null;
+        //Vertex[][] v = null;
 
         String line;
         File f;
@@ -154,11 +156,11 @@ public class DijkstraSP {
             int nodes = Integer.valueOf(Reader.readLine());
             int edges = Integer.valueOf(Reader.readLine());
 
-            v = new Vertex[num_of_queries][nodes];
+            v = new Vertex[nodes];
             for (int i = 0; i < v.length; i++) {
-                for (int j = 0; j < v[i].length; j++) {
-                    v[i][j] = new Vertex(String.valueOf(j));
-                }
+                //for (int j = 0; j < v[i].length; j++) {
+                v[i] = new Vertex(String.valueOf(i));
+                //}
             }
 
             line = Reader.readLine();
@@ -262,6 +264,13 @@ public class DijkstraSP {
         }
     }
 
+    public static void reset(Vertex[] init1) {
+        for (int i = 0; i < init1.length; i++) {
+            init1[i].minDistance = Float.POSITIVE_INFINITY;
+            init1[i].previous = null;
+        }
+    }
+
     public static void main(String[] args) throws IOException {
         String line;
         int in, out;
@@ -270,8 +279,8 @@ public class DijkstraSP {
 
         int num_of_queries = read_num_of_queries(file_in2);
         //int[] use = {1, 4};
-        Vertex[][] init1 = init1(file_in1, num_of_queries);
-        DijkstraSP[] dsp = new DijkstraSP[init1.length];
+        Vertex[] init1 = init1(file_in1, num_of_queries);
+        DijkstraSP dsp;
 
         openWriterFile();
         openReaderFile();
@@ -281,7 +290,7 @@ public class DijkstraSP {
 
         for (int i = 0; i < init1.length; i++) {
             if (line == null) {
-                System.out.println("Error");
+                //System.out.println("Error");
                 return;
             }
             tok = new StringTokenizer(line, " ");
@@ -300,15 +309,17 @@ public class DijkstraSP {
                     }
                 }
             }
+            
 
-            dsp[i] = new DijkstraSP(init1[i]);
-            dsp[i].computePaths(dsp[i].getVertex(in), use);
+            dsp = new DijkstraSP(init1);
+            dsp.computePaths(dsp.getVertex(in), use);
 
-            addline(line + dsp[i].printOnePathes(out));
-            System.out.println(line + dsp[i].printOnePathes(out));
+            addline(line + dsp.printOnePathes(out));
+            System.out.println(line + dsp.printOnePathes(out));
             line = Buffered_Reader.readLine();
-            dsp[i] = null;
-            init1[i] = null;
+            reset(init1);
+            //dsp = null;
+            //init1[i] = null;
         }
         CloseFile();
 
