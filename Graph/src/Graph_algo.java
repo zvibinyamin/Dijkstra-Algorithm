@@ -13,9 +13,6 @@ public class Graph_algo {
 	private static EdgeWeightedDigraph buildGraph( String directory){
 		File file = new File(directory);
 		
-		//System.out.println(file.isFile());   //check
-		//System.out.println(file.exists());   //check
-		
 		FileReader fr;
 		BufferedReader in;
 		try {
@@ -23,7 +20,6 @@ public class Graph_algo {
 			in = new BufferedReader(fr);
 			
 			EdgeWeightedDigraph G = new EdgeWeightedDigraph(in);
-			
 			in.close();
 			fr.close();
 			
@@ -41,7 +37,6 @@ public class Graph_algo {
 	public static void ex1(String dir_graph, String dir_paths, String dir_res){
 		//Build the graph:
 		EdgeWeightedDigraph G = buildGraph(dir_graph);                                  
-		System.out.println(G.toString());    //check
 		
 		//Declare file for 'dir_paths', 'dir_res:
 		File file_graph, file_res;
@@ -64,7 +59,6 @@ public class Graph_algo {
 			
 			//Get first line- number of paths to find:
 			int numOfpaths = Integer.parseInt(reader.readLine());
-			//System.out.println("paths: "+numOfpaths);   //check
 			
 			//Iterate over paths.
 			//Each time - get src, dest vertexes and the blackList.
@@ -77,14 +71,11 @@ public class Graph_algo {
 				//reading vertexes src, dest of  the path:
 				int src =  Integer.parseInt(line.nextToken());
 				int dest =  Integer.parseInt(line.nextToken());
-				//System.out.println("src: "+ src+" dest: "+dest);     //check
 				
 				//reading blackList:
 				int blacklist_length =  Integer.parseInt(line.nextToken());
-			//	System.out.println("\t blacklist_length: "+ blacklist_length);     //check
 				Vector<Integer> blackList = new Vector<Integer>();
 				while(line.hasMoreTokens()){	
-				//System.out.print(line.charAt(c)-'0'+", ");    //check
 					blackList.add(Integer.parseInt(line.nextToken()));
 				}
 				
@@ -95,13 +86,10 @@ public class Graph_algo {
 				DijkstraSP dijkstra = new DijkstraSP(G, src,blackList);
 				if(dijkstra.hasPathTo(dest)){
 					Double pathLength = dijkstra.distTo(dest);
-				//	System.out.println("pathLength: "+pathLength);    //check
 					writer.write(pathLength.toString());
 				}
 				else writer.write("inf");
 				writer.newLine();
-						
-			//	System.out.println();    //check
 			}
 						
 			
@@ -126,11 +114,15 @@ public class Graph_algo {
 	
 	public static void main(String[] args) {
 		String src = "C:\\Users\\akiva\\Desktop\\largeEWD.txt";
-		String test = "C:\\11\\3333\\test1.txt";
-		String dest = "C:\\11\\3333\\dest.txt";
+		String test = "C:\\Users\\akiva\\Desktop\\test3.txt";
+		String dest = "C:\\Users\\akiva\\Desktop\\dest.txt";
 		System.out.println("start");
+		long start = System.currentTimeMillis();
 		ex1(src , test, dest);
+		long end = System.currentTimeMillis();
 		System.out.println("end");
+		System.out.println("run time: "+((end-start)/1000.0)+" sec");
+		
 	}
 
 }

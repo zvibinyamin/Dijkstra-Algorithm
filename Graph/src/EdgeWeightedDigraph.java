@@ -93,6 +93,7 @@ public class EdgeWeightedDigraph {
         int E = Integer.parseInt(in.readLine());
         if (E < 0) throw new IllegalArgumentException("Number of edges must be nonnegative");
         for (int i = 0; i < E; i++) {
+        	//System.out.println(i);
         	StringTokenizer line = new StringTokenizer(in.readLine(), " ");
             int v = Integer.parseInt(line.nextToken());
             int w = Integer.parseInt(line.nextToken());
