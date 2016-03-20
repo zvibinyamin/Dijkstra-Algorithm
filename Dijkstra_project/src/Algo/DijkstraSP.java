@@ -288,11 +288,7 @@ public class DijkstraSP {
         addline(Buffered_Reader.readLine());
         line = Buffered_Reader.readLine();
 
-        for (int i = 0; i < init1.length; i++) {
-            if (line == null) {
-                //System.out.println("Error");
-                return;
-            }
+        for (int i = 0; i < init1.length && line !=null; i++) {
             tok = new StringTokenizer(line, " ");
 
             in = Integer.valueOf(tok.nextToken());
