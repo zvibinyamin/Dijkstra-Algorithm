@@ -1,4 +1,5 @@
 hello!
+
 This code uses Dijkstra's algorithm.
 
 Explain how the code works is the link: Https://www.youtube.com/watch?v=gdmfOwyQlcI
@@ -10,4 +11,5 @@ And returns the solution (if available) of each track
 
 Complexity -o(O(W*v*E*log|V|) - (w=number of queries)
 
-This work was written by: daniel fuchs, sapir ankri, akiva gubbay and zvika binyamin.
+This work was written by:
+daniel fuchs, sapir ankri, akiva gubbay and zvika binyamin.
