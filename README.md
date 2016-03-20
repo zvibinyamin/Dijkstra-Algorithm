@@ -9,7 +9,10 @@ We used open source located at the following link: Http://www.cswiki.org/wiki/in
 We took the open source informing and added it "wrapper" which takes two files: In_file_edegs and in_file_queries
 And returns the solution (if available) of each track
 
-Complexity -o(W*v*E*log|V|) - (w=number of queries)
+Complexity -o(w*v*e*log|V|)
+w=number of queries; v=number of nodes; e=number of edges.
+
+
 
 This work was written by:
 daniel fuchs, sapir ankri, akiva gubbay and zvika binyamin.
