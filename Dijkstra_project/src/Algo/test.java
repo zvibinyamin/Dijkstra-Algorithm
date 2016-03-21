@@ -35,7 +35,7 @@ public class test {
             File_Writer = new FileWriter(f);
             Buffered_Writer = new BufferedWriter(File_Writer);
         } catch (IOException ex) {
-            Logger.getLogger(DijkstraSP.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Graph.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -44,7 +44,7 @@ public class test {
             Buffered_Writer.close();
             File_Writer.close();
         } catch (IOException ex) {
-            Logger.getLogger(DijkstraSP.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Graph.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -54,19 +54,25 @@ public class test {
             Buffered_Writer.write(line);
             Buffered_Writer.newLine();
         } catch (IOException ex) {
-            Logger.getLogger(DijkstraSP.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Graph.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     public static void main(String[] args) {
         openWriterFile(file_in1);
+        int N=40;
+        addline(String.valueOf(N*N));
         addline("200");
-        addline("200");
-        
-        for (int i = 0; i < 200; i++) {
-            addline(i + " 1 1");
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if(use()) addline(i + " " + j +" 1");
+            }
         }
 
         CloseFile();
+    }
+    public static boolean use(){
+        return Math.random()>0.6;
     }
 }
