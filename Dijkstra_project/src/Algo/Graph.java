@@ -18,9 +18,9 @@ import java.util.logging.Logger;
 
 public class Graph {
 
-    static String file_in1 = "c:/in1.txt";
-    static String file_in2 = "c:/in2.txt";
-    static String file_out = "c:/out.txt";
+    static String file_in1;
+    static String file_in2;
+    static String file_out;
     static boolean showTrack = false;
     static boolean isdirected = true;
 
@@ -153,7 +153,7 @@ public class Graph {
                 out = Integer.valueOf(tok.nextToken());
                 r = Float.valueOf(tok.nextToken());
                 if (r <= 0) {
-                    new RuntimeException("the weight can't by <=0");
+                    throw new RuntimeException("the weight can't by <=0");
                 }
                 addEdge(v, in, out, r);
                 addEdge(v, out, in, r);
@@ -212,7 +212,7 @@ public class Graph {
                 out = Integer.valueOf(tok.nextToken());
                 r = Float.valueOf(tok.nextToken());
                 if (r <= 0) {
-                    new RuntimeException("the weight can't by <=0");
+                    throw new RuntimeException("the weight can't by <=0");
                 }
                 addEdge(v, in, out, r);
 
@@ -255,10 +255,6 @@ public class Graph {
     public static void openReaderFile() {
         File f = new File(file_in2);
         try {
-            if (!f.exists()) {
-                f.createNewFile();
-            }
-
             File_Reader = new FileReader(f);
             Buffered_Reader = new BufferedReader(File_Reader);
         } catch (IOException ex) {
@@ -307,16 +303,20 @@ public class Graph {
      * the main: Calls on all functions
      */
     public static void main(String[] args) throws IOException {
+        file_in1 = "c:/in1.txt";
+        file_in2 = "c:/in2.txt";
+        file_out = "c:/out.txt";
+
         if (args != null && args.length != 0) {
-            if (args.length > 0 && args[0].equals("null")) {
+            if (args.length > 0 && !args[0].equals("null")) {
                 //the default is file_in1 = "c:/in1.txt";
                 file_in1 = args[0];
             }
-            if (args.length > 1 && args[1].equals("null")) {
+            if (args.length > 1 && !args[1].equals("null")) {
                 //the default is file_in2 = "c:/in2.txt";
                 file_in2 = args[1];
             }
-            if (args.length > 2 && args[2].equals("null")) {
+            if (args.length > 2 && !args[2].equals("null")) {
                 //the default is file_out = "c:/out.txt";
                 file_out = args[2];
             }
@@ -344,10 +344,10 @@ public class Graph {
         }
 
         Graph dsp;
-
+        
         openWriterFile();
         openReaderFile();
-        System.out.println("");
+
         addline(Buffered_Reader.readLine());
         line = Buffered_Reader.readLine();
 
@@ -373,7 +373,7 @@ public class Graph {
             dsp.computePaths(dsp.getVertex(in), use);
 
             addline(line + dsp.printOnePathes(out));
-            System.out.println(line + dsp.printOnePathes(out));
+            //System.out.println(line + dsp.printOnePathes(out));
             line = Buffered_Reader.readLine();
             reset(init1);
         }
