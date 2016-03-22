@@ -29,7 +29,7 @@ in2.txt - contains a list of vertex pairs, witch shortest/cheapest paths between
           Each pair comes with a list of vertexes that the path cannot pass through(aka "black list"). 
 
 ----------------------------------------------------------------------------------------
-To change the inputs path or the outputs path, you can call the main function in the following ways:
+To change the input path or the output path, you can call the main function in the following ways:
 
 1. "main(pathin1_name, pathin2_name, fileout)"
 
