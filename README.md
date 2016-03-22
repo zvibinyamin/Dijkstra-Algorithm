@@ -29,33 +29,34 @@ in2.txt - contains a list of vertex pairs, witch shortest/cheapest paths between
           Each pair comes with a list of vertexes that the path cannot pass through(aka "black list"). 
 
 ----------------------------------------------------------------------------------------
-For differant inputs and outputs of the program/*paths*/, you can call the main function in the following ways:
+To change the inputs path or the outputs path, you can call the main function in the following ways:
 
 1. "main(pathin1_name, pathin2_name, fileout)"
 
-2. "main(pathin1_name, pathin2_name, fileout, "showTrack")" - Output will track.
+2. "main(pathin1_name, pathin2_name, fileout, "showTrack")" - Output will add track.
 
 3. "main(pathin1_name, pathin2_name, fileout, "notdirected")" - For an undirected graph.
 
 4. "main(pathin1_name, pathin2_name, fileout, "showTrack", "notdirected")" - Output will track and the graph will be not directed.
 
 ----------------------------------------------------------------------------------------
-Download the folder and put it in the path:
 
-1. To run the unit test you need to download the folder "ex1/tests".
-
-2. Put the folder path "C:\tests".
-
-3. Run the file "ex1/Graph/test/tests.java" on your computer.
-
-----------------------------------------------------------------------------------------
-Opening the project:
+How to run and open the project:
 
 1.Go to "ex1/Graph" And download it to your computer.
 
 2.Open the project with netbeans.
 
 3.Run the program.
+
+----------------------------------------------------------------------------------------
+How to run the unit test:
+
+1. you need to download the folder "ex1/tests", and the project.
+
+2. Put the folder from "ex1/tests" in the path: "C:\tests".
+
+3. Run the file "ex1/Graph/test/tests.java" on your computer.
 
 ----------------------------------------------------------------------------------------
 
