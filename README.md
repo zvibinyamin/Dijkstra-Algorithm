@@ -16,8 +16,11 @@ Complexity - O(w*v*e*log|V|)
 
 w=number of queries; v=number of nodes; e=number of edges.
 
-*NOTE - We have an additional solution for the project in 'Graph_2' that works just as well. Graph_2 implements Dijkstra as well. Its open source is located at the following link: http://algs4.cs.princeton.edu/44sp/
+*NOTE - We have an additional solution for the project in 'Graph_2' that works just as well. Graph_2 implements Dijkstra as well. Its open source is located at the following link: http://algs4.cs.princeton.edu/44sp
+
+
 ----------------------------------------------------------------------------------------
+
 Before you run the program you must make sure that you have all the '.txt' files in the location(defult is: c:\)
 
 the text files are based on two files.
