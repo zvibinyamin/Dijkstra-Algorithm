@@ -17,7 +17,7 @@ Complexity - O(w*v*e*log|V|)
 w=number of queries; v=number of nodes; e=number of edges.
 
 *NOTE - We have an additional solution for the project in 'Graph_2' that works just as well. Graph_2 implements Dijkstra as well. Its open source is located at the following link: http://algs4.cs.princeton.edu/44sp
-
+to run it go to the Graph_algo class and run your tests in its main().
 
 ----------------------------------------------------------------------------------------
 
