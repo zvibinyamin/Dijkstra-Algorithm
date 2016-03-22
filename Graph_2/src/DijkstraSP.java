@@ -69,10 +69,12 @@ public class DijkstraSP {
      * @throws IllegalArgumentException unless 0 &le; <tt>s</tt> &le; <tt>V</tt> - 1
      */
     public DijkstraSP(EdgeWeightedDigraph G, int s, Vector<Integer> blackList) {
-        for (DirectedEdge e : G.edges()) {
+        //I moved the edge negative check to the DirectedEdge Ctor,
+    	// it saves going over the edges again.
+    	/*for (DirectedEdge e : G.edges()) {
             if (e.weight() <= 0)    //My commit: don't want zero(added = ).
                 throw new IllegalArgumentException("edge " + e + " has negative/zero weight");
-        }
+        }*/
 
         distTo = new double[G.V()];
         edgeTo = new DirectedEdge[G.V()];

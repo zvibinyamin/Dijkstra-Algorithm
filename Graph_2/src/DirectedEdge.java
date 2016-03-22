@@ -37,9 +37,11 @@ public class DirectedEdge {
      * @throws IllegalArgumentException if <tt>weight</tt> is <tt>NaN</tt>
      */
     public DirectedEdge(int v, int w, double weight) {
-        if (v < 0) throw new IndexOutOfBoundsException("Vertex names must be nonnegative integers");
-        if (w < 0) throw new IndexOutOfBoundsException("Vertex names must be nonnegative integers");
+        //if (v < 0) throw new IndexOutOfBoundsException("Vertex names must be nonnegative integers");
+        //if (w < 0) throw new IndexOutOfBoundsException("Vertex names must be nonnegative integers");
         if (Double.isNaN(weight)) throw new IllegalArgumentException("Weight is NaN");
+        if (weight <= 0)    //My commit: don't want zero(added = ).
+            throw new IllegalArgumentException("Edge weight has negative/zero weight");
         this.v = v;
         this.w = w;
         this.weight = weight;

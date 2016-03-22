@@ -57,8 +57,11 @@ public class Graph_algo {
 			file_writer_res = new FileWriter(file_res);
 			writer = new BufferedWriter(file_writer_res);
 			
-			//Get first line- number of paths to find:
-			int numOfpaths = Integer.parseInt(reader.readLine());
+			//Get first line- number of paths to find and print it to res:
+			String str = reader.readLine();
+			int numOfpaths = Integer.parseInt(str);
+			writer.write(str);
+			writer.newLine();
 			
 			//Iterate over paths.
 			//Each time - get src, dest vertexes and the blackList.
@@ -113,9 +116,9 @@ public class Graph_algo {
 	
 	
 	public static void main(String[] args) {
-		String src = "C:\\Users\\akiva\\Desktop\\largeEWD.txt";
-		String test = "C:\\Users\\akiva\\Desktop\\test3.txt";
-		String dest = "C:\\Users\\akiva\\Desktop\\dest.txt";
+		String src = "C:\\Users\\akiva\\Desktop\\TESTS\\Boaz\\largeEWD.txt";
+		String test = "C:\\Users\\akiva\\Desktop\\TESTS\\Boaz\\test1.txt";
+		String dest = "C:\\Users\\akiva\\Desktop\\TESTS\\Boaz\\dest.txt";
 		System.out.println("start");
 		long start = System.currentTimeMillis();
 		ex1(src , test, dest);
