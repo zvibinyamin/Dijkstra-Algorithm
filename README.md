@@ -1,68 +1,64 @@
 hello!
 
-This code uses Dijkstra's algorithm.
+This project finds the shortest/cheapest path between a pair vertexes, in an edge-weighted graph, by implementing the Dijkstra algorithm.
 
-Explain how the code works is the link: Https://www.youtube.com/watch?v=gdmfOwyQlcI
+The program receives two files. The first with information about the graph, The second with a list of vertex pairs, each pair
+with a certain restriction(further information to follow). The program then calculates the shortest/cheapest path between each
+pair and prints the result into a file. 
 
-We used open source located at the following link: Http://www.cswiki.org/wiki/index.php?title=Dijkstra
+For an explanation on the Dijkstra algorithm, please refer to: Https://www.youtube.com/watch?v=gdmfOwyQlcI
 
-We took the open source informing and added it "wrapper" which takes two files: In_file_edegs and in_file_queries
+We used an open source located at the following link: Http://www.cswiki.org/wiki/index.php?title=Dijkstra
 
-And returns the solution (if available) of each track
+We took the open source and added a "wrapper" which receives two files: In_file_edegs and in_file_queries   //
 
-Complexity -o(w*v*e*log|V|)
+And returns the solution(if available) of each track.  //
+
+Complexity - O(w*v*e*log|V|)
 
 w=number of queries; v=number of nodes; e=number of edges.
 
 ----------------------------------------------------------------------------------------
-**before you run the program you must make sure that you have all the .txt files in the location(defult is: c:\)
+**Before you run the program you must make sure that you have all the '.txt' files in the location(defult is: c:\)
 
-the text files is base on 2 files.
+the text files are based on two files.
 
-in1.txt - this file contains the graph(all the edges and vertex)
+in1.txt - contains the data to build an edge-weighted graph( vertexes edges and edge-weights).
 
-in2.txt - this file contains the test we do in order to check what is the shortest from vertex to vertex without spesific vertex(AKA "black list")
+in2.txt - contains a list of vertex pairs, witch shortest/cheapest paths between the algorithem is required to find.
+          Each pair comes with a list of vertexes that the path cannot pass through(aka "black list"). 
 
 ----------------------------------------------------------------------------------------
-to change the input and output paths, you can call the main function like that:
+For differant inputs and outputs of the program/*paths*/, you can call the main function in the following ways:
 
-"main(pathin1_name, pathin2_name, fileout)"
+1. "main(pathin1_name, pathin2_name, fileout)"
 
-or
+2. "main(pathin1_name, pathin2_name, fileout, "showTrack")" - Output will track.
 
-"main(pathin1_name, pathin2_name, fileout, "showTrack")" - Output will track
+3. "main(pathin1_name, pathin2_name, fileout, "notdirected")" - For an undirected graph.
 
-or
-
-"main(pathin1_name, pathin2_name, fileout, "notdirected")" - the graph will be not directed.
-
-or
-
-"main(pathin1_name, pathin2_name, fileout, "showTrack", "notdirected")" - Output will track and the graph will be not directed.
+4. "main(pathin1_name, pathin2_name, fileout, "showTrack", "notdirected")" - Output will track and the graph will be not directed.
 
 ----------------------------------------------------------------------------------------
 Download the folder and put it in the path:
 
 1. To run the unit test you need to download the folder "ex1/tests".
 
-2. put the folder path "C:\tests".
+2. Put the folder path "C:\tests".
 
-3. run the file "ex1/Graph/test/tests.java" on your computer.
+3. Run the file "ex1/Graph/test/tests.java" on your computer.
+
+----------------------------------------------------------------------------------------
+Opening the project:
+
+1.Go to "ex1/Graph" And download it to your computer.
+
+2.Open the project with netbeans.
+
+3.Run the program.
 
 ----------------------------------------------------------------------------------------
 
+This Project was created by:
 
-
-How to open the project:
-
-1.go to "ex1/Graph" And download it to your computer
-
-2.open the project with netbeans
-
-3.run the program
-
-----------------------------------------------------------------------------------------
-
-This work was written by:
-
-daniel fuchs, sapir ankri, akiva gubbay and zvika binyamin.
+Daniel Duchs, Sapir Ankri, Akiva Gubbay and Zvika Binyamin.
