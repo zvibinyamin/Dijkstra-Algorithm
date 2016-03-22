@@ -2,24 +2,24 @@ hello!
 
 This project finds the shortest/cheapest path between a pair vertexes, in an edge-weighted graph, by implementing the Dijkstra algorithm.
 
-The program receives two files. The first with information about the graph, The second with a list of vertex pairs, each pair
+We took the open source and added a "wrapper" - the program receives two files. The first with information about the graph, The second with a list of vertex pairs, each pair
+
 with a certain restriction(further information to follow). The program then calculates the shortest/cheapest path between each
+
 pair and prints the result into a file. 
 
 For an explanation on the Dijkstra algorithm, please refer to: Https://www.youtube.com/watch?v=gdmfOwyQlcI
 
 We used an open source located at the following link: Http://www.cswiki.org/wiki/index.php?title=Dijkstra
 
-We took the open source and added a "wrapper" which receives two files: In_file_edegs and in_file_queries   //
-
-And returns the solution(if available) of each track.  //
-
 Complexity - O(w*v*e*log|V|)
 
 w=number of queries; v=number of nodes; e=number of edges.
 
+*NOTE - We have an additional solution for the project in 'Graph_2' that works just as well. Graph_2 implements Dijkstra as well.
+        It's open source is located at the following link: http://algs4.cs.princeton.edu/44sp/
 ----------------------------------------------------------------------------------------
-**Before you run the program you must make sure that you have all the '.txt' files in the location(defult is: c:\)
+Before you run the program you must make sure that you have all the '.txt' files in the location(defult is: c:\)
 
 the text files are based on two files.
 
@@ -29,18 +29,6 @@ in2.txt - contains a list of vertex pairs, witch shortest/cheapest paths between
           Each pair comes with a list of vertexes that the path cannot pass through(aka "black list"). 
 
 ----------------------------------------------------------------------------------------
-To change the input path or the output path, you can call the main function in the following ways:
-
-1. "main(pathin1_name, pathin2_name, fileout)"
-
-2. "main(pathin1_name, pathin2_name, fileout, "showTrack")" - Output will add track.
-
-3. "main(pathin1_name, pathin2_name, fileout, "notdirected")" - For an undirected graph.
-
-4. "main(pathin1_name, pathin2_name, fileout, "showTrack", "notdirected")" - Output will track and the graph will be not directed.
-
-----------------------------------------------------------------------------------------
-
 How to run and open the project:
 
 1.Go to "ex1/Graph" And download it to your computer.
@@ -50,7 +38,18 @@ How to run and open the project:
 3.Run the program.
 
 ----------------------------------------------------------------------------------------
-How to run the unit test:
+To change the input path or the output path, you can call the main function in the following ways:
+
+1. "main(pathin1_name, pathin2_name, fileout)"
+
+2. "main(pathin1_name, pathin2_name, fileout, "showTrack")" - print the path to file.
+
+3. "main(pathin1_name, pathin2_name, fileout, "notdirected")" - For an undirected graph.
+
+4. "main(pathin1_name, pathin2_name, fileout, "showTrack", "notdirected")" - Output will track and the graph will be not directed.
+
+----------------------------------------------------------------------------------------
+How to run the junit test:
 
 1. you need to download the folder "ex1/tests", and the project.
 
