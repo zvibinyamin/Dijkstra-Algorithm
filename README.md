@@ -63,4 +63,4 @@ How to run the junit test:
 
 This Project was created by:
 
-Daniel Duchs, Sapir Ankri, Akiva Gubbay and Zvika Binyamin.
+Daniel Fuchs, Sapir Ankri, Akiva Gubbay and Zvika Binyamin.
